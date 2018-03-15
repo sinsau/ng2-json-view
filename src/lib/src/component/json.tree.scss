@@ -1,0 +1,42 @@
+.parent{
+    font-family: droid sans mono,consolas,monospace,courier new,courier,sans-serif;
+    font-size: 10pt;
+    .key{
+        color: black;
+    }
+    .value{
+        color: rebeccapurple;
+        &.null{
+            color: blue;
+        }
+        &.string{
+            color: green;
+        }
+        &.boolean{
+            color: orange;
+        }
+        &.number{
+            color: chocolate;
+        }
+    }
+    .expanded{
+        transform: rotate(90deg);
+    }
+    .nonObject{
+        padding: 5px 0 5px 5px;
+    }
+    .arrayObject{
+    }
+    .object{
+    }
+    .toggler{
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .child{
+        padding-left: 15px;
+        border-left: 1px dashed #ccc;
+    }
+
+}

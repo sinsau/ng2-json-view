@@ -1,0 +1,32 @@
+<div class="parent">
+    <div class="nonObject" *ngFor="let node of nonObject">
+        <span class="key">{{node.map.key}}</span>
+        :
+        <span class="value" [ngClass]="[node.type]">{{node.map.value===''?'""':node.map.value}}</span>
+        <span *ngIf="node.map.value===null" class="value null">null</span>
+    </div>
+
+    <div class="arrayObject" *ngFor="let node of arrayObject">
+        <span *ngIf="!node.expand" (click)="toggleExpand(node)" class="toggler">></span>
+        <span *ngIf="node.expand" (click)="toggleExpand(node)" class="toggler">^</span>
+        <span (click)="toggleExpand(node)" class="key">{{node.map.key}}</span>
+        :
+        <span class="sub-value">[{{node.map.value.length}}]</span>
+        <div *ngIf="node.expand" class="child">
+            <div *ngFor="let obj of node.map.value">
+                <json-tree [json]="node.map.value" [expand]="expand"></json-tree>
+            </div>
+        </div>
+    </div>
+
+    <div class="object" *ngFor="let node of object">
+        <span *ngIf="!node.expand" (click)="toggleExpand(node)" class="toggler">></span>
+        <span *ngIf="node.expand" (click)="toggleExpand(node)" class="toggler" [ngClass]="{'expanded':node.expand}">^</span>
+        <span class="key">{{node.map.key}}</span>
+        :
+        <span class="sub-value">{{"{"+getObjectSize(node.map.value)+"}"}}</span>
+        <div *ngIf="node.expand" class="child">
+            <json-tree [json]="node.map.value" [expand]="expand"></json-tree>
+        </div>
+    </div>
+</div>
