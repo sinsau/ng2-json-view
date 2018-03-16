@@ -1,0 +1,34 @@
+.parent{
+    font-family: droid sans mono,consolas,monospace,courier new,courier,sans-serif;
+    font-size: 10pt;
+}
+.key{
+    color: #615f5f;
+}
+.value{
+    color: rebeccapurple;
+}
+.value.null{
+    color: blue;
+}
+.value.string{
+    color: green;
+}
+.value.boolean{
+    color: orange;
+}
+.value.number{
+    color: chocolate;
+}
+.nonObject{
+    padding: 5px 0 5px 5px;
+}
+.toggler{
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+.child{
+    padding-left: 25px;
+    border-left: 1px dashed #ccc;
+}
