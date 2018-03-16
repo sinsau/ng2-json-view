@@ -23,7 +23,7 @@
         <div *ngIf="node.expand" class="child">
             <div *ngFor="let obj of node.map.value; let i = index">
                 {{"{"}}
-                <jhi-json-tree [json]="obj" [expand]="expand"></jhi-json-tree>
+                <json-tree [json]="obj" [expand]="expand"></json-tree>
                 {{"}"}}
             </div>
         </div>
@@ -36,7 +36,7 @@
         :
         <span class="sub-value">{{"{"+getObjectSize(node.map.value)+"}"}}</span>
         <div *ngIf="node.expand" class="child">
-            <jhi-json-tree [json]="node.map.value" [expand]="expand"></jhi-json-tree>
+            <json-tree [json]="node.map.value" [expand]="expand"></json-tree>
         </div>
     </div>
 </div>

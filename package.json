@@ -1,6 +1,6 @@
 {
   "name": "ng2-json-view",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "Lightweight JSON Tree Viewer with very basic functions to view very Large JSON files",
   "main": "./bundles/ng2-json-view.umd.js",
   "module": "./ng2-json-view.es5.js",
@@ -8,7 +8,23 @@
   "typings": "./ng2-json-view.d.ts",
   "author": "Saurabh Singh",
   "license": "MIT",
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-de-chem/ng2-json-view.git"
+  },
+  "bugs": {
+    "url": "https://github.com/code-de-chem/ng2-json-view/issues"
+  },
+  "keywords": [
+    "angular5",
+    "json",
+    "tree",
+    "json view",
+    "json tree",
+    "large",
+    "dynamic",
+    "json-tree"
+  ],
   "engines": {
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"
