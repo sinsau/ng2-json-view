@@ -14,7 +14,7 @@ export interface Node {
 @Component({
   selector: 'json-tree',
   templateUrl: './json.tree.html',
-  styleUrls: ['./json.tree.scss']
+  styleUrls: ['./json.tree.css']
 })
 export class JsonTree implements OnChanges {
   name = 'Angular Library';
