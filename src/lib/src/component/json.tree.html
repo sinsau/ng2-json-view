@@ -1,32 +1,42 @@
 <div class="parent">
     <div class="nonObject" *ngFor="let node of nonObject">
+        <span *ngIf="node.type==='string' && node.map.value.length>50" >
+                <span *ngIf="!node.expand" (click)="toggleExpand(node)" class="toggler">+</span>
+                <span *ngIf="node.expand" (click)="toggleExpand(node)" class="toggler">-</span>
+        </span>
         <span class="key">{{node.map.key}}</span>
         :
-        <span class="value" [ngClass]="[node.type]">{{node.map.value===''?'""':node.map.value}}</span>
+        <span *ngIf="(node.map.value!==null && node.type!=='string') || (node.type==='string' && node.map.value.length<=50)" class="value" [ngClass]="[node.type]">
+            {{node.map.value===''?'""':node.map.value}}
+        </span>
         <span *ngIf="node.map.value===null" class="value null">null</span>
+        <span *ngIf="node.type==='string' && node.map.value.length>50 && !node.expand" class="value" [ngClass]="[node.type]">{{node.map.value.substring(0, 50)}}...</span>
+        <span *ngIf="node.type==='string' && node.map.value.length>50 && node.expand" class="value" [ngClass]="[node.type]">{{node.map.value}}</span>
     </div>
 
     <div class="arrayObject" *ngFor="let node of arrayObject">
-        <span *ngIf="!node.expand" (click)="toggleExpand(node)" class="toggler">></span>
-        <span *ngIf="node.expand" (click)="toggleExpand(node)" class="toggler">^</span>
+        <span *ngIf="!node.expand" (click)="toggleExpand(node)" class="toggler">+</span>
+        <span *ngIf="node.expand" (click)="toggleExpand(node)" class="toggler">-</span>
         <span (click)="toggleExpand(node)" class="key">{{node.map.key}}</span>
         :
         <span class="sub-value">[{{node.map.value.length}}]</span>
         <div *ngIf="node.expand" class="child">
-            <div *ngFor="let obj of node.map.value">
-                <json-tree [json]="node.map.value" [expand]="expand"></json-tree>
+            <div *ngFor="let obj of node.map.value; let i = index">
+                {{"{"}}
+                <jhi-json-tree [json]="obj" [expand]="expand"></jhi-json-tree>
+                {{"}"}}
             </div>
         </div>
     </div>
 
     <div class="object" *ngFor="let node of object">
-        <span *ngIf="!node.expand" (click)="toggleExpand(node)" class="toggler">></span>
-        <span *ngIf="node.expand" (click)="toggleExpand(node)" class="toggler" [ngClass]="{'expanded':node.expand}">^</span>
+        <span *ngIf="!node.expand" (click)="toggleExpand(node)" class="toggler">+</span>
+        <span *ngIf="node.expand" (click)="toggleExpand(node)" class="toggler">-</span>
         <span class="key">{{node.map.key}}</span>
         :
         <span class="sub-value">{{"{"+getObjectSize(node.map.value)+"}"}}</span>
         <div *ngIf="node.expand" class="child">
-            <json-tree [json]="node.map.value" [expand]="expand"></json-tree>
+            <jhi-json-tree [json]="node.map.value" [expand]="expand"></jhi-json-tree>
         </div>
     </div>
 </div>
