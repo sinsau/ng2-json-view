@@ -20,6 +20,8 @@ export class JsonTree implements OnChanges {
   name = 'Angular Library';
   @Input() json: any;
   @Input() expand = false;
+  @Input() currExpand = false;
+  @Input() label = '';
   nonObject: Node[];
   object: Node[];
   arrayObject: Node[];
@@ -88,5 +90,9 @@ export class JsonTree implements OnChanges {
 
   toggleExpand(node: Node) {
     node.expand = !node.expand;
+  }
+
+  toggleCurrExpand() {
+    this.currExpand = !this.currExpand;
   }
 }

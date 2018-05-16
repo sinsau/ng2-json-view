@@ -25,6 +25,9 @@ result = {
 }
 ```
 ```
-<json-tree [json]="result" [expand]="false"></json-tree>
+<json-tree [json]="result" [expand]="false" [currExpand]="true" [label]="'object'"></json-tree>
 ```
-setting [expand]=true will expand the json in default
+[json] the JSON to display
+[expand]=true will expand the json in default; optional; default false
+[currExpand]=true will Expand the current Node; optional; default false
+[label]="'label'" any label to display; optional; default ''
