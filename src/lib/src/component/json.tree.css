@@ -6,8 +6,14 @@
     color: grey;
     cursor: pointer;
 }
+.str-wrap{
+    word-wrap: break-word;
+}
 .togg{
     cursor: pointer;
+}
+.string-togg{
+    margin-left: -5px;
 }
 .toggler{
     color: black;

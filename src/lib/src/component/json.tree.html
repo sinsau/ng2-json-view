@@ -7,7 +7,7 @@
 </div>
 <div class="font parent" *ngIf="currExpand">
     <div class="nonObject" *ngFor="let node of nonObject">
-        <span *ngIf="node.type==='string' && node.map.value.length>50">
+        <span *ngIf="node.type==='string' && node.map.value.length>50" class="string-togg">
             <span (click)="toggleExpand(node)" class="toggler plus" [ngClass]="{'collapse' : node.expand}"></span>
         </span>
         <span class="key">{{node.map.key}}</span>
@@ -18,7 +18,7 @@
         </span>
         <span *ngIf="node.map.value===null" class="value null">null</span>
         <span *ngIf="node.type==='string' && node.map.value.length>50 && !node.expand" class="value" [ngClass]="[node.type]">{{node.map.value.substring(0, 50)}}...</span>
-        <span *ngIf="node.type==='string' && node.map.value.length>50 && node.expand" class="value" [ngClass]="[node.type]">{{node.map.value}}</span>
+        <span *ngIf="node.type==='string' && node.map.value.length>50 && node.expand" class="value str-wrap" [ngClass]="[node.type]">{{node.map.value}}</span>
     </div>
 
     <div class="arrayObject expandable" *ngFor="let node of arrayObject">
