@@ -1,6 +1,46 @@
-.parent{
+.font{
     font-family: droid sans mono,consolas,monospace,courier new,courier,sans-serif;
     font-size: 10pt;
+}
+.label{
+    color: grey;
+    cursor: pointer;
+}
+.str-wrap{
+    word-wrap: break-word;
+}
+.togg{
+    cursor: pointer;
+}
+.string-togg{
+    margin-left: -5px;
+}
+.toggler{
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+.toggler::before{
+    content: '▶';
+}
+.toggler.collapse{
+    font-size: 10pt;
+}
+.toggler.collapse::before{
+    content: "▼";
+}
+.toggler.plus{
+    font-size: 15pt;
+font-weight: bold;
+}
+.toggler.plus::before{
+    content: "+";
+}
+.toggler.plus.collapse::before{
+    content: "-";
+}
+.parent{
+    padding-left: 15px;
 }
 .key{
     color: #615f5f;
@@ -15,18 +55,13 @@
     color: green;
 }
 .value.boolean{
-    color: orange;
+    color: #ff8c00;
 }
 .value.number{
-    color: chocolate;
+    color: #ee422e;
 }
 .nonObject{
     padding: 5px 0 5px 5px;
-}
-.toggler{
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
 }
 .child{
     padding-left: 25px;
