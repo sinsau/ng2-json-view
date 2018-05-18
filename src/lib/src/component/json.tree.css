@@ -6,18 +6,22 @@
     color: grey;
     cursor: pointer;
 }
+.togg{
+    cursor: pointer;
+}
 .toggler{
     color: black;
     font-weight: bold;
+    cursor: pointer;
 }
 .toggler::before{
-    content: "\\25B6";
+    content: '▶';
 }
 .toggler.collapse{
-    font-size: 15pt;
+    font-size: 10pt;
 }
 .toggler.collapse::before{
-    content: "\\25BC";
+    content: "▼";
 }
 .toggler.plus{
     font-size: 15pt;
