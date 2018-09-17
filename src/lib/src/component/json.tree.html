@@ -1,4 +1,4 @@
-<div (click)="toggleCurrExpand()" class="font label">
+<div (click)="toggleCurrExpand()" class="font label" *ngIf="label">
     <span class="toggler" [ngClass]="{'collapse' : currExpand}"></span>
     <span class="pre" *ngIf="label !== ''">{{label}}</span>
     <span class="post">
@@ -29,9 +29,7 @@
             <span class="sub-value">[{{node.map.value.length}}]</span>
         </div>
         <div *ngIf="node.expand" class="child cont">
-            <div *ngFor="let obj of node.map.value; let i = index">
-                <json-tree [json]="obj" [expand]="expand" [label]="i"></json-tree>
-            </div>
+            <json-tree [json]="node.map.value" [expand]="expand" [currExpand]="true"></json-tree>
         </div>
     </div>
 
