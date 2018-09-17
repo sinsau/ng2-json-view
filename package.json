@@ -1,6 +1,6 @@
 {
   "name": "ng2-json-view",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Lightweight JSON Tree Viewer with very basic functions to view very Large JSON files",
   "main": "./bundles/ng2-json-view.umd.js",
   "module": "./ng2-json-view.es5.js",
